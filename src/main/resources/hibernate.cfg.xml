@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+        <!DOCTYPE hibernate-configuration SYSTEM
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://10.91.63.108:3306/bank</property>
+        <property name="hibernate.connection.username">monty</property>
+        <property name="hibernate.connection.password">totoadmin</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+        <property name="show_sql">false</property>
+        <property name="hibernate.current_session_context_class">thread</property>
+
+        <mapping class="ua.chup.users.User"/>
+        <mapping class="ua.chup.responce.Responce"/>
+        <mapping class="ua.chup.account.Account"/>
+        <mapping class="ua.chup.currency.Corrency"/>
+        <mapping class="ua.chup.tranz.Tranzaction"/>
+        <mapping class="ua.chup.type.Type"/>
+
+    </session-factory>
+</hibernate-configuration>
