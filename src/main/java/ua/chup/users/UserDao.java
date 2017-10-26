@@ -72,7 +72,7 @@ public class UserDao implements DaoInterface<User, String> {
 	}
 
 	public User findById(String id) {
-		User user = (User) getCurrentSession().get(User.class, id);
+		User user = (User) getCurrentSession().get(User.class, Integer.parseInt(id));
 		return user;
 	}
 

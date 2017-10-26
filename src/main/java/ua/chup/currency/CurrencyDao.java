@@ -10,13 +10,13 @@ import org.hibernate.cfg.Configuration;
 import java.util.List;
 
 
-public class CorrencyDao implements DaoInterface<Corrency, String> {
+public class CurrencyDao implements DaoInterface<Currency, String> {
 
 	private Session currentSession;
 
 	private Transaction currentTransaction;
 
-	public CorrencyDao() {
+	public CurrencyDao() {
 	}
 
 	public Session openCurrentSession() {
@@ -63,32 +63,32 @@ public class CorrencyDao implements DaoInterface<Corrency, String> {
 		this.currentTransaction = currentTransaction;
 	}
 
-	public void persist(Corrency entity) {
+	public void persist(Currency entity) {
 		getCurrentSession().save(entity);
 	}
 
-	public void update(Corrency entity) {
+	public void update(Currency entity) {
 		getCurrentSession().update(entity);
 	}
 
-	public Corrency findById(String id) {
-		Corrency corrency = (Corrency) getCurrentSession().get(Corrency.class, id);
+	public Currency findById(String id) {
+		Currency corrency = (Currency) getCurrentSession().get(Currency.class, id);
 		return corrency;
 	}
 
-	public void delete(Corrency entity) {
+	public void delete(Currency entity) {
 		getCurrentSession().delete(entity);
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Corrency> findAll() {
-		List<Corrency> Corrency = (List<ua.chup.currency.Corrency>) getCurrentSession().createQuery("from Corrency").list();
-		return Corrency;
+	public List<Currency> findAll() {
+		List<Currency> currency = (List<ua.chup.currency.Currency>) getCurrentSession().createQuery("from Currency").list();
+		return currency;
 	}
 
 	public void deleteAll() {
-		List<Corrency> entityList = findAll();
-		for (Corrency entity : entityList) {
+		List<Currency> entityList = findAll();
+		for (Currency entity : entityList) {
 			delete(entity);
 		}
 	}

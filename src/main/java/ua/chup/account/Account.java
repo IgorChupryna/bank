@@ -1,5 +1,6 @@
 package ua.chup.account;
 import ua.chup.dao.BaseDao;
+import ua.chup.users.User;
 
 import javax.persistence.*;
 
@@ -18,8 +19,9 @@ public class Account extends BaseDao {
     @Column
     private String type;
 
-    @Column(name = "user_id")
-    private int userId;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User userId;
 
     @Column
     private double summ;
@@ -27,7 +29,7 @@ public class Account extends BaseDao {
     public Account() {
     }
 
-    public Account(String number, String type, int userId, double summ) {
+    public Account(String number, String type, User userId, double summ) {
         this.number = number;
         this.type = type;
         this.userId = userId;
@@ -69,11 +71,11 @@ public class Account extends BaseDao {
         this.type = type;
     }
 
-    public int getUserId() {
+    public User getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(User userId) {
         this.userId = userId;
     }
 

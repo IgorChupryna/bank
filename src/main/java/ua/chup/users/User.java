@@ -1,7 +1,10 @@
 package ua.chup.users;
+import ua.chup.account.Account;
 import ua.chup.dao.BaseDao;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "User")
@@ -15,9 +18,15 @@ public class User extends BaseDao {
     @Column
     private String name;
 
+    @OneToMany(mappedBy="userId", cascade=CascadeType.ALL)
+    private List<Account> accountss = new ArrayList<>();
+
+
     public User(String name) {
         this.name = name;
     }
+
+
 
     public User() {
     }

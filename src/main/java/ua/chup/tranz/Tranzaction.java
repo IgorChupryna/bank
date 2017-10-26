@@ -36,13 +36,8 @@ public class Tranzaction extends BaseDao {
     public Tranzaction() {
     }
 
-    public Tranzaction(int typeTrnId, String typeCurTrn, String accDebit, String accCredit, String typeCurAccCr, double value, int respId) {
+    public Tranzaction(int typeTrnId, int respId) {
         this.typeTrnId = typeTrnId;
-        this.typeCurTrn = typeCurTrn;
-        this.accDebit = accDebit;
-        this.accCredit = accCredit;
-        this.typeCurAccCr = typeCurAccCr;
-        this.value = value;
         this.respId = respId;
     }
 

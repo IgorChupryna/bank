@@ -12,11 +12,11 @@
         <property name="hibernate.hbm2ddl.auto">update</property>
         <property name="show_sql">false</property>
         <property name="hibernate.current_session_context_class">thread</property>
-
+        <property name="hibernate.connection.autocommit">true</property>
         <mapping class="ua.chup.users.User"/>
         <mapping class="ua.chup.responce.Responce"/>
         <mapping class="ua.chup.account.Account"/>
-        <mapping class="ua.chup.currency.Corrency"/>
+        <mapping class="ua.chup.currency.Currency"/>
         <mapping class="ua.chup.tranz.Tranzaction"/>
         <mapping class="ua.chup.type.Type"/>
 

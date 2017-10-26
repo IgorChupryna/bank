@@ -4,8 +4,8 @@ import ua.chup.dao.BaseDao;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "Corrency")
-public class Corrency extends BaseDao {
+@Table(name = "Currency")
+public class Currency extends BaseDao {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -24,10 +24,10 @@ public class Corrency extends BaseDao {
     @Column
     private double value;
 
-    public Corrency() {
+    public Currency() {
     }
 
-    public Corrency(String typeIn, String typeOut, double value) {
+    public Currency(String typeIn, String typeOut, double value) {
         this.typeIn = typeIn;
         this.typeOut = typeOut;
         this.value = value;
@@ -35,7 +35,7 @@ public class Corrency extends BaseDao {
 
     @Override
     public String toString() {
-        return "Corrency{" +
+        return "Currency{" +
                 "id=" + id +
                 ", typeIn='" + typeIn + '\'' +
                 ", typeOut='" + typeOut + '\'' +

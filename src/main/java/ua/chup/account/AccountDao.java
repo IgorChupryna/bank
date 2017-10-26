@@ -72,7 +72,7 @@ public class AccountDao implements DaoInterface<Account, String> {
 	}
 
 	public Account findById(String id) {
-		Account account = (Account) getCurrentSession().get(Account.class, id);
+		Account account = (Account) getCurrentSession().get(Account.class, Integer.parseInt(id));
 		return account;
 	}
 
